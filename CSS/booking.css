@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 10px;
+  min-height: 100vh;
+  background: #fff;
+}
+.wrapper {
+  width: 450px;
+  margin-top: 20px;
+  background: #000;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+.wrapper header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+
+header p {
+  color: white;
+}
+
+header .icons {
+  display: flex;
+}
+header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child {
+  margin-right: -10px;
+}
+
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar {
+  padding: 20px;
+}
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days {
+  margin-bottom: 20px;
+}
+.calendar li {
+  color: #fff;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive {
+  color: #aaa;
+}
+.days li.active {
+  color: #fff;
+}
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before {
+  background: red;
+}
+.days li:not(.active):hover::before {
+  background: red;
+}
+.form-wrapper {
+  width: 450px;
+}
+.form {
+  height: 580px;
+  border-radius: 10px;
+  padding: 40px;
+  background: #000;
+}
+.form label,
+.form input,
+.form select {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.form input {
+  padding: 10px;
+}
+
+.form label {
+  color: white;
+}
+
+.form input[type="submit"] {
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #15212a;
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+  float: right;
+  margin-top: 20px;
+}
+.form select {
+  padding: 10px;
+}
+
+.days li.booked {
+  color: #fff;
+  background: #ff4c4c;
+  pointer-events: none;
+}
+
+/* 
+ADD ONS
+*/
+/* .add-ons {
+  align-content: center;
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  width: 300px;
+} */
+
+/* General Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.modal-content h2 {
+  text-align: center;
+}
+
+#confirmation-details {
+  letter-spacing: 0.5px;
+  margin-left: 30px;
+}
+
+/* Close Button */
+.close-btn {
+  position: fixed;
+  right: 33%;
+  top: 10%;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Button Styles */
+button {
+  margin-left: 18%;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#confirm-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+button#cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+button#popup-ok-btn {
+  margin-left: 190px;
+  background-color: #007bff;
+  color: white;
+}
