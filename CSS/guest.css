@@ -190,7 +190,7 @@ header .navlinks span {
 #navbar {
   height: 50px;
   padding: 15px;
-  background-color: #0c090d;
+  background-color: #000;
   position: fixed;
   top: 0;
   width: 100%;
@@ -228,7 +228,7 @@ header .navlinks span {
 
 .home .text h1 {
   /* color: #ded0b6; */
-  color: beige;
+  color: #fafafa;
   text-align: center;
   padding-top: 20px;
   max-width: 100%;
@@ -244,17 +244,8 @@ header .navlinks span {
   margin: 50px 0;
   font-size: 30px;
   font-weight: 500;
-  color: beige;
+  color: #fafafa;
   text-transform: uppercase;
-}
-
-.home .text a button {
-  background-color: #ded0b6;
-  padding: 20px;
-  font-size: 15px;
-  color: #2c3e50;
-  font-weight: 600;
-  display: none;
 }
 
 .home .logo {
@@ -380,7 +371,7 @@ header .navlinks span {
 }
 
 .about-info h1 {
-  color: #000;
+  color: #fafafa;
   cursor: default;
   font-weight: 800;
   /* text-align: center; */
@@ -392,7 +383,7 @@ header .navlinks span {
 
 .about-info p {
   padding: 0 40px;
-  color: #000;
+  color: #fafafa;
   cursor: default;
   /* font-family: "Montserrat"; */
   font-weight: 600;
@@ -490,7 +481,7 @@ header .navlinks span {
 .resort-info {
   width: 40%;
   font-size: 26px;
-  color: #000;
+  color: #fafafa;
   font-weight: 600;
   text-align: justify;
   margin-left: 100px;
@@ -519,7 +510,7 @@ header .navlinks span {
   width: 45%;
   font-size: 26px;
   font-weight: 600;
-  color: #000;
+  color: #fafafa;
   text-align: justify;
   margin-left: 100px;
   padding-top: 100px;
@@ -572,7 +563,7 @@ header .navlinks span {
 }
 
 .gallery h1 {
-  color: #000;
+  color: #fafafa;
   cursor: default;
   font-weight: 800;
   /* text-align: center; */
@@ -620,6 +611,26 @@ header .navlinks span {
 .gallery-wrapper img {
   border-radius: 20px;
   width: 400px;
+}
+
+#fullscreen {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  z-index: 1000; /* Ensure it is on top of other elements */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#fullscreen img {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
 }
 
 /* @media screen and (max-width: 784px) {

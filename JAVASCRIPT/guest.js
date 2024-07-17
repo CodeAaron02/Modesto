@@ -103,3 +103,15 @@ window.addEventListener("scroll", () => {
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 });
+
+// IMAGE FULLSCREEN
+document.querySelectorAll(".gallery-wrapper img").forEach((img) => {
+  img.addEventListener("click", () => {
+    document.getElementById("fullscreenImage").src = img.src;
+    document.getElementById("fullscreen").style.display = "flex";
+  });
+});
+
+function closeFullscreen() {
+  document.getElementById("fullscreen").style.display = "none";
+}
