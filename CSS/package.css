@@ -8,13 +8,12 @@ a {
   text-decoration: none;
 }
 
+
 header {
   z-index: 1;
   position: fixed;
   text-align: center;
-  height: 80px;
   width: 100%;
-  background-color: #0c090d;
   font-family: "Montserrat";
   /* line-height: 11svh; */
   align-content: center;
@@ -146,6 +145,23 @@ header .navlinks span {
     width: 350px;
   }
 }
+
+#navbar {
+  height: 50px;
+  padding: 15px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.5s;
+}
+
+.hidden {
+  top: -70px; /* Adjust based on the height of your navbar */
+}
+
+/* PACKAGE */
 
 .package-section {
   background: #fdfffc;
