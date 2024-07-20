@@ -826,7 +826,7 @@ body .card {
   position: fixed;
   z-index: 1000;
   width: 25rem;
-  background-color: white;
+  background-color: #000;
   top: 20%;
   left: 63%;
 }
@@ -836,10 +836,11 @@ body .card #header {
   padding: 0vw;
 }
 body .card #header h1 {
-  color: #fff;
+  color: #fafafa;
   font-size: 2vw;
   font-family: "Finger Paint", cursive;
   padding: 1vw;
+  margin-left: 20px;
 }
 body .card #message-section::-webkit-scrollbar {
   width: 10px;
@@ -865,7 +866,7 @@ body .card #message-section #user {
   bottom: 0;
   min-height: 1.5vw;
   border: 0.15vw solid #777;
-  background-color: #fff;
+  background-color: #fafafa;
   border-radius: 0px 1.5vw 1.5vw 1.8vw;
   padding: 1vw;
   margin: 1.5vw 0;
@@ -873,11 +874,11 @@ body .card #message-section #user {
 body .card #message-section #user {
   border: 1.5px solid #000;
   border-radius: 1.5vw 0vw 1.5vw 1.8vw;
-  background-color: #000;
+  background-color: #fafafa;
   float: right;
 }
 body .card #message-section #user #user-response {
-  color: #fff;
+  color: #000;
 }
 body .card #message-section .message {
   color: #000;
@@ -902,31 +903,28 @@ body .card #input-section {
   width: 100%;
 }
 body .card #input-section input {
-  color: #000;
+  color: #fafafa;
   min-width: 0.5vw;
   outline: none;
   height: 3vw;
-  width: 26vw;
+  width: 15vw;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid #000 0.2vw;
+  background-color: #000;
 }
 body .card .send {
   background: transparent;
   border: 0;
   cursor: pointer;
   flex: 0 0 auto;
-  margin-left: 1.4vw;
-  margin-right: 0vw;
   padding: 0;
   position: relative;
   outline: none;
 }
 body .card .send .circle {
-  position: relative;
-  width: 4.8vw;
-  height: 4.8vw;
+  padding: 0;
+  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -935,6 +933,7 @@ body .card .send .circle i {
   font-size: 3vw;
   margin-left: 4vw;
   margin-top: 1vw;
+  color: #fafafa;
 }
 
 @media screen and (max-width: 493px) {
