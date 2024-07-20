@@ -61,7 +61,7 @@
               >
             </li>
           </ul>
-          <span class="fa fa-bars" onclick="menutoggle()"></span>
+          <span id="menu-toggle-icon" class="fa fa-bars" onclick="menutoggle()"></span>
         </div>
       </div>
     </header>
@@ -77,29 +77,7 @@
       </div>
     </section>
 
-    <script>
-      $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        dots: true,
-        navText: [
-          "<i class = 'fa fa-chevron-left'></i>",
-          "<i class = 'fa fa-chevron-right'></i>",
-        ],
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 1,
-          },
-          1000: {
-            items: 2,
-          },
-        },
-      });
-    </script>
+    
 
    
 <!-- ABOUT SECTION -->
@@ -110,7 +88,7 @@
     <div class="about" id="story">
       <div class="about-wrapper">
         <div class="about-info">
-          <h1>Our Story</h1>
+          <h1>Our <span style="color: #A31621;">Story</span></h1>
           <div id="lights">
             <div id="red"></div>
             <div id="orange"></div>
@@ -347,15 +325,6 @@
           </form>
         </div>
       </div>
-      <script>
-        function openLoginForm() {
-          document.getElementById("loginForm").style.display = "block";
-        }
-
-        function closeLoginForm() {
-          document.getElementById("loginForm").style.display = "none";
-        }
-      </script>
     </footer>
 
     <!-- AI IMPLEMENTATION -->
