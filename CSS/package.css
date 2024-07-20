@@ -8,6 +8,9 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-color: #000;
+}
 
 header {
   z-index: 1;
@@ -163,14 +166,9 @@ header .navlinks span {
 
 /* PACKAGE */
 
-.package-section {
-  background: #fdfffc;
-  width: 100%;
-  max-width: 100%;
-}
-
 .package-section h1 {
-  color: #000;
+  margin-top: 50px;
+  color: #fafafa;
   cursor: default;
   font-weight: 800;
   /* text-align: center; */
@@ -181,7 +179,7 @@ header .navlinks span {
 }
 
 .package-section #lights {
-  top: -80px;
+  top: -60px;
   margin-left: 25rem;
   position: relative;
   display: flex;
@@ -228,7 +226,7 @@ header .navlinks span {
   text-align: center;
   font-size: 30px;
   font-weight: 800;
-  color: #000;
+  color: #fafafa;
 }
 
 #package-time {
@@ -248,25 +246,9 @@ header .navlinks span {
 
 #package-time,
 #package-prices {
-  color: #000;
+  color: #fafafa;
   font-size: 18px;
   margin-top: 22px;
-}
-
-.package-btn {
-  letter-spacing: 2px;
-  margin-top: 15px;
-  font-weight: 600;
-  float: right;
-  background: none;
-  border: none;
-  color: beige;
-  background-color: #2c3e50e9;
-  font-size: 24px;
-  padding: 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 
 .package-btn:hover {
@@ -277,7 +259,7 @@ header .navlinks span {
   border-radius: 5px;
   width: 95%;
   margin: 40px auto;
-  background-color: #000;
+  background-color: grey;
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
@@ -292,12 +274,12 @@ header .navlinks span {
 }
 
 .package-details-info .package-details-info-items i {
-  color: white;
+  color: #000;
   margin-right: 5px;
 }
 
 .package-details-info .package-details-info-items span {
-  color: white;
+  color: #000;
   font-weight: 400;
   font-size: 16px;
 }

@@ -1,16 +1,16 @@
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-};
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function () {
+//   var currentScrollPos = window.pageYOffset;
+//   if (prevScrollpos > currentScrollPos) {
+//     document.getElementById("navbar").style.top = "0";
+//   } else {
+//     document.getElementById("navbar").style.top = "-50px";
+//   }
+//   prevScrollpos = currentScrollPos;
+// };
 
-const navEl = document.querySelector(".nav");
-const hamburgerEl = document.querySelector(".hamburger");
+// const navEl = document.querySelector(".nav");
+// const hamburgerEl = document.querySelector(".hamburger");
 
 /* hamburgerEl.addEventListener("click", () => {
   navEl.classList.add("nav--open");
