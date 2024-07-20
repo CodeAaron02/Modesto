@@ -346,8 +346,8 @@ header .navlinks span {
 /* END OF BANNER SECTION */
 
 .about {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  min-height: 100svh;
 }
 
 .about-wrapper {
@@ -392,12 +392,13 @@ header .navlinks span {
 } */
 
 .about-info h1 {
+  text-align: center;
   color: #fafafa;
   cursor: default;
   font-weight: 800;
   /* text-align: center; */
   font-size: 48px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   text-transform: uppercase;
 }
 
@@ -418,25 +419,25 @@ header .navlinks span {
 @media screen and (max-width: 1155px) {
   .about-info h1 {
     text-align: center;
+    font-size: 38px;
   }
   .about-img img {
     display: none;
   }
 }
 
-@media screen and (max-width: 679px) {
-  .about-info #red,
-  .about-info #orange,
-  .about-info #green {
-    display: none;
-  }
-
-  .about-info h1 {
-    text-align: center;
+@media screen and (max-width: 700px) {
+  .about-info p {
+    font-size: 18px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 467px) {
+  .about {
+    padding-top: 0;
+  }
+
   .about-info h1 {
     font-size: 38px;
     text-align: center;
@@ -446,10 +447,16 @@ header .navlinks span {
     width: 100%;
     padding: 50px 0;
   }
+
+  .about-info p {
+    font-size: 17px;
+    width: 100%;
+  }
 }
 
+/* Background */
+
 .background {
-  padding-top: 40px;
   max-width: 100%;
   min-height: 100svh;
 }
@@ -460,36 +467,10 @@ header .navlinks span {
   font-weight: 800;
   /* text-align: center; */
   font-size: 48px;
-  padding-bottom: 10px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   text-transform: uppercase;
   margin-left: 7.5rem;
-}
-
-.background #lights {
-  top: -60px;
-  margin-left: 24rem;
-  position: relative;
-  display: flex;
-  gap: 10px;
-}
-
-.background #red {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: red;
-}
-.background #orange {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: orange;
-}
-.background #green {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: green;
 }
 
 .about-resort {
@@ -580,7 +561,7 @@ header .navlinks span {
 
 .gallery {
   /* padding: 40px 0; */
-  padding-top: 40px;
+  padding-top: 60px;
   max-width: 100%;
   min-height: 100svh;
 }
@@ -591,7 +572,7 @@ header .navlinks span {
   font-weight: 800;
   /* text-align: center; */
   font-size: 48px;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
   text-transform: uppercase;
   margin-left: 7.5rem;
 }
@@ -695,7 +676,7 @@ header .navlinks span {
   padding-bottom: 50px;
   color: #fdfffc;
   font-weight: 800;
-  font-size: 35px;
+  font-size: 48px;
   text-transform: uppercase;
 }
 
