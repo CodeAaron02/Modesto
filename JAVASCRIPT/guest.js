@@ -1,21 +1,15 @@
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function () {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     document.getElementById("navbar").style.top = "0";
-//   } else {
-//     document.getElementById("navbar").style.top = "-50px";
-//   }
-//   prevScrollpos = currentScrollPos;
-// };
+// MENU TOGGLE
 
-// const navEl = document.querySelector(".nav");
-// const hamburgerEl = document.querySelector(".hamburger");
+var menulist = document.getElementById("menulist");
+menulist.style.maxHeight = "0px";
 
-/* hamburgerEl.addEventListener("click", () => {
-  navEl.classList.add("nav--open");
-}); */
-``;
+function menutoggle() {
+  if (menulist.style.maxHeight == "0px") {
+    menulist.style.maxHeight = "100svh";
+  } else {
+    menulist.style.maxHeight = "0px";
+  }
+}
 
 //
 
