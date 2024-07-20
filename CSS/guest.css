@@ -458,7 +458,6 @@ header .navlinks span {
 
 .background {
   max-width: 100%;
-  min-height: 100svh;
 }
 
 .background h1 {
@@ -487,7 +486,7 @@ header .navlinks span {
   color: #fafafa;
   font-weight: 600;
   text-align: justify;
-  margin-left: 100px;
+  margin-left: 50px;
   align-self: center;
 }
 
@@ -515,12 +514,93 @@ header .navlinks span {
   font-weight: 600;
   color: #fafafa;
   text-align: justify;
-  margin-left: 100px;
+  margin-left: 50px;
   padding-top: 100px;
 }
 
 .about-owner .owner-img img {
   width: 400px;
+}
+
+@media screen and (max-width: 1155px) {
+  .resort-info {
+    font-size: 20px;
+  }
+
+  .about-resort .resort-img img {
+    width: 500px;
+  }
+
+  .about-owner {
+    width: 100%;
+  }
+  .about-owner .owner-img img {
+    width: 300px;
+  }
+  .owner-info {
+    width: 45%;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .background h1 {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .about-resort {
+    text-align: center;
+  }
+
+  .about-resort .resort-img img {
+    width: 550px;
+  }
+
+  .about-resort {
+    display: block;
+  }
+
+  .resort-info {
+    margin-top: 30px;
+    width: 85%;
+  }
+
+  .about-owner {
+    text-align: center;
+    display: block;
+  }
+
+  .about-owner .owner-img img {
+    margin-left: 100px;
+    width: 300px;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .about-resort .resort-img img {
+    width: 450px;
+  }
+
+  .resort-info {
+    margin-top: 30px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-resort .resort-img img {
+    width: 330px;
+  }
+
+  .resort-info {
+    text-align: center;
+    margin-left: 0;
+    font-size: 15px;
+    margin-top: 30px;
+    width: 100%;
+  }
 }
 /* @keyframes image {
   0% {
