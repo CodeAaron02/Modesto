@@ -16,9 +16,9 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    "mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/mongodbVSCodePlaygroundDB"
-  )
+  .connect
+  // "mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/mongodbVSCodePlaygroundDB"
+  ()
   .then(() => {
     console.log("mongodb connected");
   })
@@ -50,7 +50,7 @@ data = {
   name: "Aaron Justin",
   email: "delaroca02@gmail.com",
   phonenumber: "09618816823",
-  package: "Overnight",
+  package: "Day Tour Weekdays",
   date: new Date("7-23-2024"),
 };
 

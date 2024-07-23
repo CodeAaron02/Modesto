@@ -79,7 +79,8 @@ const renderCalendar = () => {
         ? "active"
         : "";
     let isBooked = bookedDates.has(dateStr) ? "booked" : "";
-    liTag += `<li class="${isToday} ${isBooked}" data-date="${dateStr}">${i}</li>`;
+    let isRestricted = restrictedDates.has(dateStr) ? "restricted" : "";
+    liTag += `<li class="${isToday} ${isBooked} ${isRestricted}" data-date="${dateStr}">${i}</li>`;
   }
 
   for (let i = lastDayofMonth; i < 6; i++) {
@@ -93,12 +94,25 @@ const renderCalendar = () => {
   days.forEach((day) => {
     day.addEventListener("click", (e) => {
       const selectedDate = e.target.getAttribute("data-date");
+      if (restrictedDates.has(selectedDate)) {
+        alert("This date is restricted and cannot be selected.");
+        return;
+      }
       document.getElementById("selected-date").value = selectedDate;
       days.forEach((day) => day.classList.remove("active"));
       e.target.classList.add("active");
     });
   });
 };
+
+const restrictedDates = new Set([
+  "2024-07-25",
+  "2024-07-26",
+  "2024-07-12",
+  // Add more restricted dates here in YYYY-MM-DD format
+]);
+
+//
 
 prevNextIcon.forEach((icon) => {
   icon.addEventListener("click", () => {
@@ -114,27 +128,3 @@ prevNextIcon.forEach((icon) => {
     renderCalendar();
   });
 });
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const phone = formData.get("phone");
-  const packageChoice = formData.get("package");
-  const selectedDate = formData.get("date");
-
-  confirmationDetails.innerText = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${packageChoice}\nDate: ${selectedDate}`;
-  modal.style.display = "block";
-  modal.style.lineHeight = 3;
-  modal.style.textTransform = "uppercase";
-});
-
-closeModalBtn.onclick = () => {
-  modal.style.display = "none";
-};
-
-cancelBtn.onclick = () => {
-  modal.style.display = "none";
-};
-
