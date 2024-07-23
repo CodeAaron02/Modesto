@@ -2,10 +2,10 @@
 
 // mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/
 
-const mongoose = required("mongoose");
+const mongoose = require ("mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017/Modesto")
+  .connect("mongodb://0.0.0.0:27017/Modesto")
   .then(() => {
     console.log("mongodb connected");
   })
