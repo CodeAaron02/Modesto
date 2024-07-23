@@ -14,14 +14,14 @@ app.post("/submit-reservation", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "delarocaaaron@gmail.com",
+      user: "delarocaaaron02@gmail.com",
       pass: "Zerotwo@02",
     },
   });
 
   // Email content
   let mailOptions = {
-    from: "your-email@gmail.com",
+    from: "delarocaaaron@gmail.com",
     to: "delarocaaaron@gmail.com",
     subject: "New Reservation Request",
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${package}\nDate: ${date}`,
