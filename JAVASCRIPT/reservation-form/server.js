@@ -16,19 +16,21 @@ app.use(express.static("public"));
 app.post("/submit-reservation", (req, res) => {
   const { name, email, phone, package, date } = req.body;
 
+  console.log("Received form data:", req.body);
+
   // Create a transporter
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "your-email@gmail.com",
-      pass: "your-app-password", // Use an App Password if 2-Step Verification is enabled
+      user: "delarocaaaron@gmail.com",
+      pass: "Zerotwo@02", // Use an App Password if 2-Step Verification is enabled
     },
   });
 
   // Email content
   let mailOptions = {
-    from: "your-email@gmail.com",
-    to: "recipient-email@gmail.com",
+    from: "delarocaaaron@gmail.com",
+    to: "delarocaaaron@gmail.com",
     subject: "New Reservation Request",
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${package}\nDate: ${date}`,
   };
@@ -36,8 +38,10 @@ app.post("/submit-reservation", (req, res) => {
   // Send email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
+      console.error("Error sending email:", error.message);
       return res.status(500).send("Error sending email: " + error.message);
     }
+    console.log("Email sent:", info.response);
     res.status(200).send("Reservation request sent successfully!");
   });
 });
