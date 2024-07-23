@@ -128,3 +128,39 @@ prevNextIcon.forEach((icon) => {
     renderCalendar();
   });
 });
+
+//
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("reservation-form");
+
+  if (form) {
+    form.onsubmit = function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      // Send form data to the server
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.text())
+        .then((result) => {
+          alert("Reservation request sent successfully!");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
+  } else {
+    console.error("Form element not found");
+  }
+});
