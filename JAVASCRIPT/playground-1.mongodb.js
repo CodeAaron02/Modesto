@@ -8,58 +8,50 @@
 // Use 'console.log()' to print to the debug output.
 // For more documentation on playgrounds please refer to
 //
+
+//  mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/
+
+// mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/
+
 const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://delaroca02:zerotwo02@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
+    "mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/mongodbVSCodePlaygroundDB"
   )
-  .then(() => console.log("MongoDB connected..."))
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .then(() => {
+    console.log("mongodb connected");
+  })
+  .catch(() => {
+    console.log("error");
+  });
 
-const itemSchema = new mongoose.Schema({ name: String });
-const Item = mongoose.model("Item", itemSchema);
+const reservationSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  },
+  email: {
+    type: String,
+  },
+  phonenumber: {
+    type: Number,
+  },
+  package: {
+    type: String,
+  },
+  date: {
+    type: Date,
+  },
+});
 
-const createNewItem = async () => {
-  const newItem = new Item({ name: "New Item" });
-  try {
-    await newItem.save();
-    console.log("Item saved successfully");
-  } catch (err) {
-    console.error("Save error:", err);
-  }
+const collection = new mongoose.model("reservation", reservationSchema);
+
+data = {
+  name: "Aaron Justin",
+  email: "delaroca02@gmail.com",
+  phonenumber: "09618816823",
+  package: "Overnight",
+  date: new Date("7-23-2024"),
 };
 
-createNewItem();
-
-// Select the database to use.
-use("mongodbVSCodePlaygroundDB");
-
-// Insert a few documents into the sales collection.
-db.getCollection("reservation").insertMany([
-  {
-    name: "Justin",
-    email: "delaroca02@gmail.com",
-    phone_number: "09618816823",
-    packages: "Day Tour Weekdays",
-    date: new Date("2014-03-01T08:00:00Z"),
-  },
-  {
-    name: "Justin",
-    email: "delaroca02@gmail.com",
-    phone_number: "09618816823",
-    packages: "Day Tour Weekdays",
-    date: new Date("2014-03-01T09:00:00Z"),
-  },
-  {
-    name: "Aaron",
-    email: "aaron@gmail.com",
-    phone_number: "09618816823",
-    packages: "Overnight",
-    date: new Date("2014-03-01T09:00:00Z"),
-  },
-]);
+collection.insertMany([data]);

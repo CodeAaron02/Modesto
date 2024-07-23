@@ -2,10 +2,10 @@
 
 // mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/
 
-const mongoose = require ("mongoose");
+const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://0.0.0.0:27017/Modesto")
+  .connect("mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/")
   .then(() => {
     console.log("mongodb connected");
   })
@@ -13,11 +13,17 @@ mongoose
     console.log("error");
   });
 
-const modSchema = new mongoose.Schema({
+const reservationSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
 });
 
-const collection = new mongoose.model("mod", modSchema);
+const collection = new mongoose.model("reservation", reservationSchema);
+
+data = {
+  name: "justin",
+};
+
+collection.insertMany([data]);
