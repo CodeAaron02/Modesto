@@ -5,20 +5,20 @@ const nodemailer = require("nodemailer");
 const app = express();
 const port = 3000;
 
-// Middleware
+// Middleware to parse incoming requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files
+// Serve static files from the "public" directory
 app.use(express.static("public"));
 
-// Handle the form submission
+// Handle the form submission via POST request
 app.post("/submit-reservation", (req, res) => {
   const { name, email, phone, package, date } = req.body;
 
   console.log("Received form data:", req.body);
 
-  // Create a transporter
+  // Create a transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -27,10 +27,10 @@ app.post("/submit-reservation", (req, res) => {
     },
   });
 
-  // Email content
+  // Define email content
   let mailOptions = {
-    from: "delarocaaaron@gmail.com",
-    to: "delarocaaaron@gmail.com",
+    from: "your-email@gmail.com",
+    to: "recipient-email@gmail.com",
     subject: "New Reservation Request",
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${package}\nDate: ${date}`,
   };
@@ -39,10 +39,12 @@ app.post("/submit-reservation", (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error("Error sending email:", error.message);
-      return res.status(500).send("Error sending email: " + error.message);
+      return res
+        .status(500)
+        .json({ message: "Error sending email: " + error.message });
     }
     console.log("Email sent:", info.response);
-    res.status(200).send("Reservation request sent successfully!");
+    res.status(200).json({ message: "Reservation request sent successfully!" });
   });
 });
 
