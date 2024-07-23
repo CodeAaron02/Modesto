@@ -11,16 +11,6 @@ function menutoggle() {
   }
 }
 
-// LOG IN FORM
-
-function openLoginForm() {
-  document.getElementById("loginForm").style.display = "block";
-}
-
-function closeLoginForm() {
-  document.getElementById("loginForm").style.display = "none";
-}
-
 //
 const inputUsername = document.querySelector("#username");
 const inputPassword = document.querySelector("#password");
