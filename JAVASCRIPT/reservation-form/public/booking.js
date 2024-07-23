@@ -152,22 +152,12 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify(data),
       })
-        .then((response) => {
-          if (!response.ok) {
-            return response.json().then((err) => {
-              throw new Error(err.message);
-            });
-          }
-          return response.json();
-        })
+        .then((response) => response.text())
         .then((result) => {
-          alert(result.message);
-          // Redirect to guest.html
-          window.location.href = "HTML/guest.html";
+          alert("Reservation request sent successfully!");
         })
         .catch((error) => {
           console.error("Error:", error);
-          alert("An error occurred: " + error.message);
         });
     };
   } else {
