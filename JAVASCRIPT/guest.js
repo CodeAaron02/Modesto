@@ -53,24 +53,6 @@ document
     }
   });
 
-const fetchBookedDates = async () => {
-  try {
-    const response = await fetch("http://localhost:5000/api/booked-dates"); // Adjust the URL as necessary
-    if (response.ok) {
-      const data = await response.json();
-      data.forEach((date) => bookedDates.add(date));
-      renderCalendar();
-    } else {
-      console.error("Failed to fetch booked dates.");
-    }
-  } catch (error) {
-    console.error("Error fetching booked dates:", error);
-  }
-};
-
-// Fetch booked dates and render calendar on page load
-document.addEventListener("DOMContentLoaded", fetchBookedDates);
-
 // IMAGE FULLSCREEN
 document.querySelectorAll(".gallery-wrapper img").forEach((img) => {
   img.addEventListener("click", () => {
@@ -82,3 +64,31 @@ document.querySelectorAll(".gallery-wrapper img").forEach((img) => {
 function closeFullscreen() {
   document.getElementById("fullscreen").style.display = "none";
 }
+
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      // Your form submission logic here
+      const formData = new FormData(contactForm);
+      fetch("/send-email", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          alert("Message sent successfully!");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("There was an error sending your message.");
+        });
+    });
+  } else {
+    console.error("Contact form not found");
+  }
+});

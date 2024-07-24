@@ -14,14 +14,14 @@ app.post("/send-email", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail", // You can use other services like 'Yahoo', 'Outlook', etc.
     auth: {
-      user: "your-email@gmail.com", // Replace with your email
-      pass: "your-email-password", // Replace with your email password
+      user: "delarocaaaron@gmail.com", // Replace with your email
+      pass: "Zerotwo@02", // Replace with your email password
     },
   });
 
   const mailOptions = {
     from: email,
-    to: "ModestoResort@gmail.com", // Replace with the admin email
+    to: "delarocaaaron@gmail.com", // Replace with the admin email
     subject: `New message from ${name}`,
     text: message,
   };

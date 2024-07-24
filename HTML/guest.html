@@ -252,30 +252,40 @@
         </div>
 
         <div class="contact-form">
-          <form action="" method="post" class="contact"></form>
-          <input
-            type="text"
-            name="name"
-            class="text-box"
-            placeholder="Your name"
-            required
-            autocomplete="off"
-          />
-
-          <input
-            type="email"
-            name="email"
-            autocomplete="off"
-            class="text-box"
-            placeholder="Email Address"
-            required
-          />
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-          ></textarea>
-          <input type="button" class="send-btn" name="submit" value="Submit" />
+          <form
+            action="/send-email"
+            method="post"
+            class="contact"
+            id="contactForm"
+          >
+            <input
+              type="text"
+              name="name"
+              class="text-box"
+              placeholder="Your name"
+              required
+              autocomplete="off"
+            />
+            <input
+              type="email"
+              name="email"
+              autocomplete="off"
+              class="text-box"
+              placeholder="Email Address"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+            ></textarea>
+            <input
+              type="submit"
+              class="send-btn"
+              name="submit"
+              value="Submit"
+            />
+          </form>
         </div>
       </div>
     </div>
@@ -329,5 +339,6 @@
 
     <script src="/JAVASCRIPT/guest.js"></script>
     <script src="/JAVASCRIPT/chatbot.js"></script>
+    <script src="/contact-form/server.js"></script>
   </body>
 </html>
