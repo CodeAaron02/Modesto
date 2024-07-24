@@ -65,8 +65,7 @@ function closeFullscreen() {
   document.getElementById("fullscreen").style.display = "none";
 }
 
-//
-
+// CONTACT FORM
 document.addEventListener("DOMContentLoaded", function () {
   const contactForm = document.getElementById("contactForm");
 

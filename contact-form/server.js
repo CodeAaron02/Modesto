@@ -8,11 +8,14 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Serve static files from the "public" directory
+app.use(express.static("public"));
+
 app.post("/send-email", (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: "Gmail", // You can use other services like 'Yahoo', 'Outlook', etc.
+    service: "Gmail",
     auth: {
       user: "delarocaaaron@gmail.com", // Replace with your email
       pass: "Zerotwo@02", // Replace with your email password
@@ -21,7 +24,7 @@ app.post("/send-email", (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: "delarocaaaron@gmail.com", // Replace with the admin email
+    to: "delarocaaaron02@gmail.com", // Replace with the admin email
     subject: `New message from ${name}`,
     text: message,
   };
