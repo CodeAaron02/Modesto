@@ -23,7 +23,6 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Playfair Display";
 }
 
 body {
@@ -889,10 +888,11 @@ header .navlinks span {
   width: 60px;
   height: 60px;
   /* background-color: #d5b272; */
-  background-color: #fafafa;
+  background-color: transparent;
+  cursor: pointer;
   /* color: #0b1116; */
   /* color: #ded0b6; */
-  color: #000;
+  color: #228b22;
   font-size: 16px;
   border-radius: 50%;
   z-index: 1000;
@@ -924,7 +924,7 @@ body .card #header {
 body .card #header h1 {
   color: #fafafa;
   font-size: 2vw;
-  font-family: "Finger Paint", cursive;
+  font-family: Georgia, "Times New Roman", Times, serif;
   padding: 1vw;
   margin-left: 20px;
 }
@@ -948,10 +948,10 @@ body .card #message-section::-webkit-scrollbar-thumb {
 }
 body .card #message-section #bot,
 body .card #message-section #user {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   bottom: 0;
   min-height: 1.5vw;
-  border: 0.15vw solid #777;
   background-color: #fafafa;
   border-radius: 0px 1.5vw 1.5vw 1.8vw;
   padding: 1vw;

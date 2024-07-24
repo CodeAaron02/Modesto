@@ -39,6 +39,8 @@ const userMessage = [
     "magkano ang inyong rates nyo",
     "magkano rates nyo",
     "magkano rates nyo",
+    "hello goodmorning, can i ask about your rates",
+    "Hello goodmorning, can i ask about your rates",
   ],
   [
     "what are your packages",
