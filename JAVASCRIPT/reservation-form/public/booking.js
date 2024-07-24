@@ -40,20 +40,21 @@ const months = [
 const bookedDates = new Set(); // This will store dates already booked
 
 // Fetch booked dates from the server
-const fetchBookedDates = async () => {
-  try {
-    const response = await fetch("/api/booked-dates"); // Replace with actual API endpoint
-    if (response.ok) {
-      const data = await response.json();
-      data.forEach((date) => bookedDates.add(date));
-      renderCalendar(); // Render calendar after fetching booked dates
-    } else {
-      console.error("Failed to fetch booked dates.");
-    }
-  } catch (error) {
-    console.error("Error fetching booked dates:", error);
-  }
-};
+
+// const fetchBookedDates = async () => {
+//   try {
+//     const response = await fetch("/api/booked-dates"); // Replace with actual API endpoint
+//     if (response.ok) {
+//       const data = await response.json();
+//       data.forEach((date) => bookedDates.add(date));
+//       renderCalendar(); // Render calendar after fetching booked dates
+//     } else {
+//       console.error("Failed to fetch booked dates.");
+//     }
+//   } catch (error) {
+//     console.error("Error fetching booked dates:", error);
+//   }
+// };
 
 const renderCalendar = () => {
   let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),

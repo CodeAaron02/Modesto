@@ -99,10 +99,10 @@ header .current-date {
   transform: translate(-50%, -50%);
 }
 .days li.active::before {
-  background: red;
+  background: #228b22;
 }
 .days li:not(.active):hover::before {
-  background: red;
+  background: #228b22;
 }
 .form-wrapper {
   width: 450px;
@@ -142,12 +142,6 @@ header .current-date {
 }
 .form select {
   padding: 10px;
-}
-
-.days li.booked {
-  color: #fff;
-  background: #ff4c4c;
-  pointer-events: none;
 }
 
 /* 
