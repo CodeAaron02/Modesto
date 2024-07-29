@@ -180,7 +180,7 @@ reservationForm.addEventListener("submit", async (e) => {
     const package = formData.get("package");
     const date = formData.get("date");
 
-    const res = await fetch("http://localhost:3000/submit-reservation", {
+    await fetch("http://localhost:3000/submit-reservation", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -192,10 +192,9 @@ reservationForm.addEventListener("submit", async (e) => {
         package,
         date,
       }),
-    });
-
-    const data = await res.json();
-    console.log(data);
+    })
+      .then((res) => res.json)
+      .then(() => alert("Send sucessfully"));
   } catch (error) {
     console.log(error);
   }
