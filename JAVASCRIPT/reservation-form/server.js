@@ -23,7 +23,7 @@ app.post("/submit-reservation", (req, res) => {
     service: "gmail",
     auth: {
       user: "delarocaaaron02@gmail.com",
-      pass: "onlyyoucanmakemesmile", // Use an App Password if 2-Step Verification is enabled
+      pass: "czlb tjzc xflo liik", // Use an App Password if 2-Step Verification is enabled
     },
   });
 
