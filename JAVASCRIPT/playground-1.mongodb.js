@@ -15,10 +15,9 @@
 
 const mongoose = require("mongoose");
 
-mongoose
-  .connect
-  // "mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/mongodbVSCodePlaygroundDB"
-  ()
+mongoose.connect;
+// "mongodb+srv://delaroca02:zerotwo02@modesto.rrffudr.mongodb.net/mongodbVSCodePlaygroundDB"
+""
   .then(() => {
     console.log("mongodb connected");
   })
