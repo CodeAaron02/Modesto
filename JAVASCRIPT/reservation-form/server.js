@@ -24,8 +24,13 @@ app.post("/submit-reservation", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
+<<<<<<< HEAD
       user: "delarocaaaron02@gmail.com",
       pass: "lckz jtsc nuac pngh", // Use an App Password if 2-Step Verification is enabled
+=======
+      user: "delarocaaaron@gmail.com",
+      pass: "czlb tjzc xflo liik", // Use an App Password if 2-Step Verification is enabled
+>>>>>>> 539fb11c194847f55e23e6e0b226eb319ee7d527
     },
   });
 
