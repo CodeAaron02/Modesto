@@ -1,12 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const cors = require("cors");
 
 const app = express();
 const port = 3000;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files
@@ -23,14 +25,14 @@ app.post("/submit-reservation", (req, res) => {
     service: "gmail",
     auth: {
       user: "delarocaaaron02@gmail.com",
-      pass: "czlb tjzc xflo liik", // Use an App Password if 2-Step Verification is enabled
+      pass: "lckz jtsc nuac pngh", // Use an App Password if 2-Step Verification is enabled
     },
   });
 
   // Email content
   let mailOptions = {
-    from: email,
-    to: "delarocaaaron@gmail.com",
+    from: "delarocaaaron02@gmail.com",
+    to: email,
     subject: "New Reservation Request",
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${package}\nDate: ${date}`,
   };

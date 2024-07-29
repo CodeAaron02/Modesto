@@ -131,7 +131,7 @@ prevNextIcon.forEach((icon) => {
 });
 
 //
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("reservation-form");
 
   if (form) {
@@ -163,5 +163,40 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   } else {
     console.error("Form element not found");
+  }
+}); */
+
+const reservationForm = document.querySelector("#reservation-form");
+
+reservationForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    const formData = new FormData(e.currentTarget);
+
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const package = formData.get("package");
+    const date = formData.get("date");
+
+    const res = await fetch("http://localhost:3000/submit-reservation", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        package,
+        date,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
   }
 });
